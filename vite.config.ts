@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="Vite/client" />
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
@@ -48,4 +51,8 @@ export default defineConfig({
     react(), 
     VitePWA(manifestForPlugin)
   ],
+  test: {
+	environment: "jsdom",
+	globals: true
+  }
 })
